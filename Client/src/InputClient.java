@@ -4,7 +4,7 @@ import java.net.Socket;
 
 public class InputClient extends Thread {
     private Socket socket;
-    private Notif notif;
+    private Message message;
 
     public InputClient(Socket socket) {
         this.socket = socket;
@@ -15,7 +15,8 @@ public class InputClient extends Thread {
         try {
             ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
             while (socket.isConnected()) {
-                notif = (Notif) inputStream.readObject();
+                message = (Message) inputStream.readObject();
+                System.out.println(message.getSender() + " : " + message.getMessage());
             }
             inputStream.close();
         } catch (IOException | ClassNotFoundException e) {
