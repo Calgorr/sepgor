@@ -32,7 +32,7 @@ public class InputClient extends Thread {
                         System.out.println("your key is invalid lets erase this one and ask for another");
                         Main.content.serverKey = "";
                         Main.content.serverId = 0;
-                        Main.content.validKey(socket);
+                       // Main.content.validKey(socket,Main.client.inputClient);
                     }else System.out.println("your key is valid");
 
                 }else{

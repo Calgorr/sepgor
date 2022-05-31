@@ -8,8 +8,6 @@ public class OutputClient extends Thread {
     private SeConMessage message;
     private Socket socket;
     private InputClient inputClient;
-    private int chatId;
-    private String text;
 
     public OutputClient(Socket socket, InputClient inputClient, SeConMessage message) {
         this.message = message;
@@ -19,12 +17,10 @@ public class OutputClient extends Thread {
 
     @Override
     public void run() {
-        Scanner input = new Scanner(System.in);
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
             while (socket.isConnected()) {
-                //SeConMessage message1 = new SeConMessage(0,RSAUtil.publicKey);
-               // outputStream.writeObject(message1);
+                outputStream.writeObject(message);
             }
         } catch (IOException e) {
             e.printStackTrace();
