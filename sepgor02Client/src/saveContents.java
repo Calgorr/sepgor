@@ -3,7 +3,7 @@ import java.io.*;
 public abstract class saveContents implements Serializable {
 
     static void save() throws IOException {//saves notebook obj with all the notes at the end
-        FileOutputStream fileOutputStream = new FileOutputStream("data.bin" , false);
+        FileOutputStream fileOutputStream = new FileOutputStream("data.bin", false);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(Main.content);
         objectOutputStream.close();
@@ -11,8 +11,7 @@ public abstract class saveContents implements Serializable {
     }
 
 
-
-   static boolean load() throws IOException, ClassNotFoundException {//loads notebook obj on start
+    static boolean load() throws IOException, ClassNotFoundException {//loads notebook obj on start
         try {
             FileInputStream fileInputStream = new FileInputStream("data.bin");
 
@@ -22,7 +21,7 @@ public abstract class saveContents implements Serializable {
             fileInputStream.close();
             objectInputStream.close();
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }

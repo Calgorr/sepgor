@@ -6,7 +6,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 public class ServerReturner implements Serializable {
-    private int id ;
+    private int id;
     private String text;
 
     public ServerReturner(int id, String text) {
@@ -24,7 +24,7 @@ public class ServerReturner implements Serializable {
     }
 
     public String getServerKey() throws IllegalBlockSizeException, NoSuchPaddingException, BadPaddingException, NoSuchAlgorithmException, InvalidKeyException {
-        RSAUtil.serverKey =RSAUtil.decrypt(text,RSAUtil.privateKey);
+        RSAUtil.serverKey = RSAUtil.decrypt(text, RSAUtil.privateKey);
         return RSAUtil.serverKey;
     }
 }

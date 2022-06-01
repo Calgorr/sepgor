@@ -1,8 +1,6 @@
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.Scanner;
-import java.io.IOException;
 
 public class OutputClient extends Thread {
     private SeConMessage message;

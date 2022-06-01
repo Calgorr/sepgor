@@ -1,13 +1,11 @@
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.Socket;
 
 public class Content implements Serializable {
+    private static Socket socket;
     String publicKey = ""; //= Base64.getEncoder().encodeToString(keyPair.getPublicKey().getEncoded());//
     String privateKey = "";//=Base64.getEncoder().encodeToString(keyPair.getPrivateKey().getEncoded()); //
     String serverKey = "";
-    private static Socket socket;
     int serverId = 0;
 
     public Content(String publicKey, String privateKey, String serverKey) {
@@ -33,10 +31,8 @@ public class Content implements Serializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }*/
-            System.out.println(Main.content.publicKey);
 
             SeConMessage message = new SeConMessage(0, Main.content.publicKey);
-            System.out.println(message.getText());
             OutputClient outputClient = new OutputClient(socket, inputClient, message);
             outputClient.start();
         }

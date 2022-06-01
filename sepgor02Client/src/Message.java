@@ -6,7 +6,7 @@ public class Message implements Serializable {
     private String chatId;
     private String text;
 
-    public Message(String message, int sender, String senderPort,String text) {
+    public Message(String message, int sender, String senderPort, String text) {
         this.session = message;
         this.command = sender;
         this.chatId = senderPort;

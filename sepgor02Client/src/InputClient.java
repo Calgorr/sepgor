@@ -21,25 +21,24 @@ public class InputClient extends Thread {
             ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
             while (socket.isConnected()) {
                 serverReturner = (ServerReturner) inputStream.readObject();
-                if(serverReturner.getId()==0){
+                if (serverReturner.getId() == 0) {
                     String[] str = serverReturner.getServerKey().split(",");
                     Main.content.serverId = Integer.parseInt(str[0]);
                     Main.content.serverKey = str[1];
                     System.out.println("new keys received");
-                }
-                else if(serverReturner.getId()==1){
-                    if(serverReturner.getText().equals("false")){
+                } else if (serverReturner.getId() == 1) {
+                    if (serverReturner.getText().equals("false")) {
                         System.out.println("your key is invalid lets erase this one and ask for another");
                         Main.content.serverKey = "";
                         Main.content.serverId = 0;
-                       // Main.content.validKey(socket,Main.client.inputClient);
-                    }else System.out.println("your key is valid");
+                        // Main.content.validKey(socket,Main.client.inputClient);
+                    } else System.out.println("your key is valid");
 
-                }else{
+                } else {
                     System.out.println("sss");
                 }
                 //serverReturner.t
-               // System.out.println(serverReturner.getServerKey());
+                // System.out.println(serverReturner.getServerKey());
             }
             inputStream.close();
         } catch (IOException | ClassNotFoundException e) {

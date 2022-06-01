@@ -2,7 +2,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.HashSet;
 
 public class UserHandler extends Thread {
     private Socket client;
@@ -19,10 +18,11 @@ public class UserHandler extends Thread {
         try {
             ObjectInputStream inputStream = new ObjectInputStream(client.getInputStream());
             SeConMessage seConMessage;
+            // yeki az moshkel ha az inja bood chon socket dasht baste mishod age niaze ke chand ta client response befreste
+            // bayad ke if ro tabdil be while bokoni to khat payini
             if (client.isConnected()) {
                 seConMessage = (SeConMessage) inputStream.readObject();
             }
-            client.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }

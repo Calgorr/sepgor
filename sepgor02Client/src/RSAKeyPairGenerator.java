@@ -15,7 +15,7 @@ public class RSAKeyPairGenerator {
         KeyPair pair = keyGen.generateKeyPair();
         Main.content.privateKey = Base64.getEncoder().encodeToString(pair.getPublic().getEncoded());
         Main.content.publicKey = Base64.getEncoder().encodeToString(pair.getPublic().getEncoded());
-       // Main.content = new Content(privateKey,publicKey,"");
+        // Main.content = new Content(privateKey,publicKey,"");
     }
 
     public void writeToFile(String path, byte[] key) throws IOException {
