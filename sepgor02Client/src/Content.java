@@ -15,12 +15,17 @@ public class Content implements Serializable {
     String session = "";
     private static Socket socket;
     int serverId = 0;
+    String username ="";
+    String password = "";
 
-    public Content(String publicKey, String privateKey, String serverKey,String session) {
+
+    public Content(String publicKey, String privateKey, String serverKey, String session,String username, String password) {
         this.publicKey = publicKey;
         this.privateKey = privateKey;
         this.serverKey = serverKey;
         this.session = session;
+        this.username = username;
+        this.password = password;
     }
 
     public void validKey(Socket socket, InputClient inputClient) {
@@ -48,14 +53,14 @@ public class Content implements Serializable {
         }
     }
 
-    public void validSession(Socket socket, InputClient inputClient) {
+    public void validSession(Socket socket, InputClient inputClient,String userName,String password) throws NoSuchAlgorithmException {
 
         if (!session.equals("")) {
             System.out.println("you have a session, lets see if its valid");
-            new OutputClient(socket, inputClient, new SeConMessage(this.serverId, "1")).start();
+            Main.sendCommand(1,0,new TextMessage(session));
         } else {
             System.out.println("you dont have a session lets get one!");
-            Main.sendCommand(0,0,new TextMessage("sepehrmnp-sepehr1381"));
+            Main.sendCommand(0,0,new TextMessage(userName+"-"+Functions.sha3(password)));
             /*try {
                 ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
                 if (socket.isConnected()) {

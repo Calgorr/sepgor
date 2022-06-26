@@ -9,12 +9,12 @@ import java.util.concurrent.CompletableFuture;
 
 public class Main {
 
-    static Content content = new Content("", "", "","");
+    static Content content = new Content("", "", "","","sepehrmnp","sepehr1381");
     static Client client;
     public static void sendCommand(int command,int chatId,Message message){
         String session = content.session;
 
-        new OutputClient(client.socket, client.inputClient,new SeConMessage(content.serverId,Encrypt.encrypt(new Gson().toJson(new Command(session,command,chatId,message)),content.serverKey))).start();
+        new OutputClient(client.socket, client.inputClient,new SeConMessage(content.serverId,Encrypt.encrypt(new Gson().toJson(new Command(session,command,chatId,message,1)),content.serverKey))).start();
 
     }
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException, ClassNotFoundException, InterruptedException {
@@ -34,10 +34,10 @@ public class Main {
         client.connect();
         Socket socket = client.socket;
         content.validKey(client.socket, client.inputClient);
-        content.validSession(client.socket,client.inputClient);
+        content.validSession(client.socket,client.inputClient,"sepehrmnp","sepehr1381");
 
 
         saveContents.save();
-        sendCommand(0,0,new TextMessage("fff"));
+       // sendCommand(0,0,new TextMessage("fff"));
     }
 }

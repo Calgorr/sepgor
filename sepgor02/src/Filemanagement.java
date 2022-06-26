@@ -21,10 +21,7 @@ public class Filemanagement implements DataManagement{
         return false;
     }
 
-    @Override
-    public int insertSession(User user, String session) {
-        return 0;
-    }
+
 
     @Override
     public int createChat(int id1, int id2) {
@@ -53,6 +50,21 @@ public class Filemanagement implements DataManagement{
 
     @Override
     public String getSecCon(int id) {
+        return null;
+    }
+
+    @Override
+    public String insertSession(int id, String session) {
+        return null;
+    }
+
+    @Override
+    public int getIdfromUsers(String userName) {
+        return 0;
+    }
+
+    @Override
+    public String getSesion(int id) {
         return null;
     }
 
