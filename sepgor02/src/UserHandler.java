@@ -65,11 +65,21 @@ public class UserHandler extends Thread {
                         int commandId = command.getCommand();
                         switch (commandId){
                             case 0:
-
+                                String[] userPass = ((TextMessage)command.getMessage()).getText().split("-");
                                 ///inja
-                                System.out.println("login and get session"+Functions.sha3(((TextMessage)command.getMessage()).getText()));
+                                System.out.println(userPass[0]+" "+userPass[1]);
+                                if(userPass[1].equals(Main.dataManagement.getPassword(userPass[0]))){
+                                    System.out.println("login Successful");
+                                    outputStream.writeObject(new ServerReturner(2,Main.dataManagement.insertSession(Main.dataManagement.getIdfromUsers(userPass[0]),Functions.createSession())));
+                                }else{
+                                    System.out.println("login Unsuccessful");
+                                    outputStream.writeObject(new ServerReturner(2,"false"));
+                                }
 
                                 break;
+                            case 1:
+                                String session = ((TextMessage)command.getMessage()).getText();
+                                outputStream.writeObject(new ServerReturner(3,Main.dataManagement.getUser(Main.dataManagement.getId(session)).getUserName()));
                         }
 
                     }

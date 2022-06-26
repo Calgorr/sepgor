@@ -3,7 +3,6 @@ import com.google.gson.Gson;
 
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
-import java.util.Arrays;
 
 public class SQL implements DataManagement {
     //static Connection conn = null;
@@ -58,8 +57,8 @@ public class SQL implements DataManagement {
         }
         return password;
     }
-    public int insertSession(User user, String session) {
-       int id = user.getId();
+    public String insertSession(int id, String session) {///tghr
+
         String sql = "INSERT INTO sessions(id,session,date) VALUES(?,?,?)";
         boolean tr = true;
         int error =0;
@@ -80,7 +79,7 @@ public class SQL implements DataManagement {
                 error = e.getErrorCode();
             }
         }
-        return error;
+        return session;
     }
     public int getMessageNumber(int chatId){
         int messageNum = 0;
@@ -190,6 +189,39 @@ public class SQL implements DataManagement {
         int id=0;
         String sql = "SELECT id FROM sessions WHERE session ='"+session+"' LIMIT 1";
        // boolean exist = false;
+        try {
+            Connection conn = connect();
+            Statement stmt  = conn.createStatement();
+            ResultSet rs    = stmt.executeQuery(sql);
+            if(rs.next()) id = rs.getInt("id");
+            rs.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return id;
+    }
+    public String getSesion(int id){//jdid
+        String session = null;
+        String sql = "SELECT session FROM sessions WHERE id ="+id+" LIMIT 1";
+        // boolean exist = false;
+        try {
+            Connection conn = connect();
+            Statement stmt  = conn.createStatement();
+            ResultSet rs    = stmt.executeQuery(sql);
+            if(rs.next()) session = rs.getString("session");
+            rs.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return session;
+    }
+
+    public int getIdfromUsers(String userName){
+        int id =0;
+        String sql = "SELECT id FROM USERS WHERE userName ='"+userName+"' LIMIT 1";
+        // boolean exist = false;
         try {
             Connection conn = connect();
             Statement stmt  = conn.createStatement();
