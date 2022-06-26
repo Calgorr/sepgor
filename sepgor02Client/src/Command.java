@@ -1,20 +1,33 @@
+import com.google.gson.Gson;
+
 import java.io.Serializable;
 
 public class Command implements Serializable {
     private String session;
     private int command;
     private int chatId;
-    private Message message;
+    private String message;
+    private int type;
 
-    public Message getMessage() {
-        return message;
+    public int getType() {
+        return type;
     }
 
-    public Command(String session, int sender, int senderPort, Message message) {
+    public Message getMessage() {
+        Message returner = null;
+        if (type==1){
+            returner = new Gson().fromJson(message,TextMessage.class);
+        }
+        return returner;
+
+    }
+
+    public Command(String session, int sender, int senderPort, Message message,int type) {
         this.session = session;
         this.command = sender;
         this.chatId = senderPort;
-        this.message = message;
+        this.message = new Gson().toJson(message);
+        this.type = type;
     }
 
     public String getSession() {
