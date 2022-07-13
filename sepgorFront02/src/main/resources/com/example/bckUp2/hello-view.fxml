@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1310.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane fx:id="chatScene" layoutX="-7.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="831.0" prefWidth="1324.0" visible="false">
+         <left>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="863.0" prefWidth="183.0">
+                     <children>
+                        <VBox fx:id="chatsVBox" layoutX="6.0" prefHeight="866.0" prefWidth="182.0" AnchorPane.leftAnchor="6.0">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <children>
+                              <Text fx:id="usersUsername" strokeType="OUTSIDE" strokeWidth="0.0" text="server" wrappingWidth="168.2734375">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </left>
+         <right>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <Pane maxHeight="1.7976931348623157E308" prefHeight="912.0" prefWidth="897.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane layoutY="110.0" prefHeight="728.0" prefWidth="1116.0">
+                     <content>
+                        <VBox fx:id="chatMessages" prefHeight="779.0" prefWidth="1092.0">
+                           <children>
+                              <HBox layoutX="10.0" layoutY="458.0" prefHeight="55.0" prefWidth="1092.0">
+                                 <children>
+                                    <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="server" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ssdd" wrappingWidth="999.13671875" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets top="20.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="110.0" prefWidth="1118.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="110.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                           <image>
+                              <Image url="@../../../../../../../../Pictures/skyL%20prj/5e25f7b2-d9a5-42e4-9f58-124b3b8e2c97.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label text="hhhhhhhhhhhhhhhh">
+                           <HBox.margin>
+                              <Insets top="40.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Region prefHeight="110.0" prefWidth="792.0" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" text="settings">
+                           <HBox.margin>
+                              <Insets right="10.0" top="40.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="765.0" prefWidth="1092.0" visible="false">
+                     <children>
+                        <HBox prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="change name" />
+                              <TextField promptText="new name">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" text="-&gt;">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="add people" />
+                              <TextField promptText="userName">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" text="+">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="create Channel" />
+                              <TextField promptText="channel name">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" text="+">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="120.0" prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="new Role" />
+                              <TextField promptText="user name">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Region layoutX="955.0" layoutY="10.0" prefHeight="55.0" prefWidth="16.0" />
+                              <CheckBox mnemonicParsing="false" text="CheckBox">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox layoutX="291.0" layoutY="10.0" mnemonicParsing="false" text="CheckBox">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox layoutX="409.0" layoutY="10.0" mnemonicParsing="false" text="CheckBox">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox layoutX="409.0" layoutY="10.0" mnemonicParsing="false" text="CheckBox">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox layoutX="409.0" layoutY="10.0" mnemonicParsing="false" text="CheckBox">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox layoutX="409.0" layoutY="10.0" mnemonicParsing="false" text="CheckBox">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox layoutX="492.0" layoutY="10.0" mnemonicParsing="false" text="CheckBox">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox layoutX="492.0" layoutY="10.0" mnemonicParsing="false" text="CheckBox">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <Region prefHeight="55.0" prefWidth="46.0" />
+                              <Button mnemonicParsing="false" text="+">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="120.0" prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="remove user" />
+                              <TextField promptText="username">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" text="-">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <Line endX="991.2929077148438" endY="-6.263455390930176" startX="-100.0" />
+                        <HBox layoutX="10.0" layoutY="230.0" prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="user" />
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="293.0" prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="user" />
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="signUpSignInPane" layoutX="354.0" layoutY="216.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <left>
+            <ScrollPane fx:id="chats" managed="false" prefHeight="200.0" prefWidth="200.0" visible="false" BorderPane.alignment="CENTER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="181.0">
+                     <children>
+                        <VBox layoutX="6.0" prefHeight="501.0" prefWidth="158.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="66.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="122.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="178.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="290.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="346.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="402.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </left>
+         <center>
+            <ScrollPane fx:id="chat" managed="false" prefHeight="200.0" prefWidth="200.0" visible="false" BorderPane.alignment="CENTER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="378.0">
+                     <children>
+                        <VBox prefHeight="610.0" prefWidth="377.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="66.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="122.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="178.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="290.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="346.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                              <Label layoutX="10.0" layoutY="402.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <VBox fx:id="signUpSignInVBox" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: 122;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text stroke="#0c37d3" strokeLineCap="BUTT" text="SEPGOR" textAlignment="CENTER">
+                     <font>
+                        <Font size="61.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Region prefHeight="200.0" prefWidth="200.0">
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </Region>
+                  <Text fx:id="signInSignUpText" strokeType="OUTSIDE" strokeWidth="0.0" text="logIn">
+                     <font>
+                        <Font name="B Badr" size="27.0" />
+                     </font>
+                  </Text>
+                  <TextArea fx:id="userNameInput" minWidth="-Infinity" prefHeight="10.0" prefWidth="50.0" promptText="username" />
+                  <TextArea fx:id="passwordInput" minWidth="-Infinity" prefHeight="10.0" prefWidth="50.0" promptText="password">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextArea>
+                  <TextArea fx:id="emailSignUp" prefHeight="10.0" prefWidth="200.0" promptText="email" visible="false" />
+                  <Button fx:id="signInSignUpButton" mnemonicParsing="false" onAction="#signInSignUpSendButton" prefWidth="500.0" text="log in" />
+                  <Text fx:id="signInSignUpShowText" fill="#223af5" onMouseClicked="#signUp" strokeType="OUTSIDE" strokeWidth="0.0" text="doesn't have an account?" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</Pane>

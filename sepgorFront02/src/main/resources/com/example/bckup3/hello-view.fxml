@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="chatScene" layoutX="3.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="831.0" prefWidth="1324.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+         <left>
+            <ScrollPane prefHeight="831.0" prefWidth="139.0" BorderPane.alignment="CENTER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="863.0" prefWidth="131.0">
+                     <children>
+                        <VBox fx:id="chatsVBox" layoutX="6.0" prefHeight="866.0" prefWidth="122.0" AnchorPane.leftAnchor="6.0">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <children>
+                              <Text fx:id="usersUsername" onMouseClicked="#userSettingPaneButton" strokeType="OUTSIDE" strokeWidth="0.0" text="server" wrappingWidth="117.07341766357422">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </left>
+         <center>
+            <Pane maxHeight="1.7976931348623157E308" prefHeight="831.0" prefWidth="902.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane fx:id="chatsVBoxMessages" layoutX="122.0" layoutY="-3.0" prefHeight="700.0" prefWidth="995.0">
+                     <content>
+                        <VBox fx:id="chatMessages" prefHeight="689.0" prefWidth="1092.0" spacing="10.0" />
+                     </content>
+                  </ScrollPane>
+                  <VBox fx:id="chatSettings1" layoutX="123.0" layoutY="-2.0" prefHeight="767.0" prefWidth="982.0" visible="false">
+                     <children>
+                        <HBox prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="change name" />
+                              <TextField fx:id="newChatName" promptText="new name">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#newChatNameButton" text="-&gt;">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="add people" />
+                              <TextField fx:id="newUserNameToAdd" onAction="#newUserNameToAddButton" promptText="userName">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#newUserNameToAddButton" text="+">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="create Channel" />
+                              <TextField fx:id="newChannelName" onAction="#newChannelNameButton" promptText="channel name">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#newChannelNameButton" text="+">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="120.0" prefHeight="55.0" prefWidth="1092.0" spacing="5.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="96.0" text="new Role" />
+                              <TextField fx:id="newRoleUserName" promptText="user name">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Region layoutX="955.0" layoutY="10.0" prefHeight="55.0" prefWidth="16.0" />
+                              <CheckBox fx:id="canAddChannel" mnemonicParsing="false" text="AddChannel">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="canRemoveChannel" layoutX="291.0" layoutY="10.0" mnemonicParsing="false" text="removeChannel">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="canRemoveUser" layoutX="409.0" layoutY="10.0" mnemonicParsing="false" text="removeUser">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="canRestrictUser" layoutX="409.0" layoutY="10.0" mnemonicParsing="false" text="restrictUser">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="canBanUser" layoutX="409.0" layoutY="10.0" mnemonicParsing="false" text="banUser">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="canChangeServerName" layoutX="409.0" layoutY="10.0" mnemonicParsing="false" text="changeServerName">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="canPin" layoutX="492.0" layoutY="10.0" mnemonicParsing="false" text="pin">
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </CheckBox>
+                              <Button mnemonicParsing="false" onAction="#addNewRoleButton" text="+">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="120.0" prefHeight="55.0" prefWidth="1092.0" spacing="10.0">
+                           <children>
+                              <Label maxHeight="-Infinity" prefHeight="55.0" prefWidth="92.0" text="remove user" />
+                              <TextField fx:id="userNameToRemove" onAction="#userNameToRemoveButton" promptText="username">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#userNameToRemoveButton" text="-">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <Line endX="1116.63720703125" endY="5.0" startX="135.34417724609375" startY="5.0" />
+                  <ScrollPane prefHeight="391.0" prefWidth="969.0">
+                     <content>
+                        <VBox fx:id="usersOfServer" prefHeight="390.0" prefWidth="967.0" />
+                     </content>
+                  </ScrollPane>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="chatsMessenger" layoutX="123.0" layoutY="704.0" prefHeight="75.0" prefWidth="804.0">
+                     <children>
+                        <HBox prefHeight="17.0" prefWidth="927.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="selectedMessageId" prefHeight="35.0" prefWidth="73.0" text="0" />
+                              <Button mnemonicParsing="false" onAction="#replyButtonClick" prefHeight="48.0" prefWidth="80.0" text="reply" />
+                        <Button mnemonicParsing="false" onAction="#pinButton" prefHeight="48.0" prefWidth="80.0" text="pin" />
+                              <Button mnemonicParsing="false" onAction="#addLike" prefHeight="48.0" prefWidth="80.0" text="like" />
+                              <Button mnemonicParsing="false" onAction="#addDisLike" prefHeight="48.0" prefWidth="80.0" text="dislike" />
+                              <Button mnemonicParsing="false" onAction="#addLaugh" prefHeight="48.0" prefWidth="80.0" text="laugh" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="79.0" prefWidth="927.0">
+                           <children>
+                              <TextField fx:id="textMessage" onAction="#sendTextMessage" prefHeight="56.0" prefWidth="808.0" />
+                              <Button fx:id="sendTextMessageButton" mnemonicParsing="false" onAction="#sendTextMessage" prefHeight="43.0" prefWidth="126.0" text="send" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="14.0" prefWidth="927.0">
+                           <children>
+                              <Label prefHeight="26.0" prefWidth="183.0" text="is reply to: " />
+                              <Label fx:id="replyMesageId" prefHeight="26.0" prefWidth="183.0" text="0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="700.0" prefWidth="126.0">
+                     <children>
+                        <ImageView fitHeight="110.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Pictures/skyL%20prj/5e25f7b2-d9a5-42e4-9f58-124b3b8e2c97.jpg" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="serverName" strokeType="OUTSIDE" strokeWidth="0.0" text="serverName" wrappingWidth="125.07341766357422">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="chatSettingsButton" disable="true" mnemonicParsing="false" onAction="#chatSettingsButton" prefHeight="26.0" prefWidth="114.0" text="settings" />
+                  <Button fx:id="pinsButton" disable="true" mnemonicParsing="false" onAction="#pinsButton" prefHeight="26.0" prefWidth="114.0" text="pins" />
+                        <ScrollPane prefHeight="710.0" prefWidth="127.0">
+                           <content>
+                              <VBox fx:id="channelsVBox" maxWidth="-Infinity" prefHeight="730.0" prefWidth="110.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+            <VBox fx:id="userSettingPane" layoutX="130.0" layoutY="-5.0" prefHeight="719.0" prefWidth="968.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="userName" />
+                              <TextField fx:id="changeUsername" onAction="#changeUsernameButton" promptText="new username" />
+                              <Button mnemonicParsing="false" onAction="#changeUsernameButton" text="-&gt;" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="email" />
+                              <TextField fx:id="changeEmail" onAction="#changeEmailButton" promptText="new email" />
+                              <Button mnemonicParsing="false" onAction="#changeEmailButton" text="-&gt;" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="phone number" />
+                              <TextField fx:id="changePhoneNumber" onAction="#changePhoneNumberButton" promptText="new phone number" />
+                              <Button mnemonicParsing="false" onAction="#changePhoneNumberButton" text="-&gt;" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="password" />
+                              <TextField fx:id="changePassword" onAction="#changePasswordButton" promptText="new password" />
+                              <Button mnemonicParsing="false" onAction="#changePasswordButton" text="-&gt;" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="42.0" prefWidth="968.0" spacing="20.0">
+                           <children>
+                              <Label text="newServer" />
+                              <TextField fx:id="newServerName" onAction="#newServerNameButton" promptText="newServerName" />
+                              <Button mnemonicParsing="false" onAction="#newServerNameButton" text="-&gt;" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Line endX="867.2930297851562" startX="-100.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="600.0">
+                     <children>
+                        <HBox prefHeight="37.0" prefWidth="600.0" spacing="25.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#showOnlines" text="Online" />
+                              <Button mnemonicParsing="false" onAction="#showAll" text="All" />
+                              <Button mnemonicParsing="false" onAction="#showPending" text="Pending" />
+                              <Button mnemonicParsing="false" onAction="#showBlocked" text="Blocked" />
+                              <Button mnemonicParsing="false" onAction="#showAddFriend" text="Add Friend" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <Pane fx:id="addFriendPane" layoutY="39.0" prefHeight="361.0" prefWidth="600.0" visible="false">
+                           <children>
+                              <Label layoutX="50.0" prefHeight="17.0" prefWidth="60.0" text="Add Friend" />
+                              <Label layoutX="50.0" layoutY="20.0" text="You can add a friend with their Sepgor tag : it's CaSe sEnSeTiVe" />
+                              <TextArea fx:id="newUsernameToAddToFriends" layoutX="50.0" layoutY="40.0" prefHeight="37.0" prefWidth="493.0" promptText="Enter A Username" />
+                              <Button layoutX="410.0" layoutY="46.0" mnemonicParsing="false" onAction="#newUsernameToAddToFriendsButton" text="Send Friend Request" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="onlinePane" layoutY="39.0" prefHeight="361.0" prefWidth="600.0" visible="false">
+                           <children>
+                              <TextField layoutX="40.0" prefHeight="25.0" prefWidth="517.0" promptText="Search" />
+                              <Circle fill="WHITE" layoutX="530.0" layoutY="13.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Line endX="323.0" endY="-107.0" layoutX="207.0" layoutY="120.0" startX="332.0" startY="-98.0" />
+                              <Label layoutX="40.0" layoutY="50.0" text="All Friends -" />
+                              <Label layoutX="105.0" layoutY="50.0" text="//the counter of online friends" />
+                              <ScrollPane layoutY="87.0" prefHeight="277.0" prefWidth="605.0">
+                                 <content>
+                                    <VBox fx:id="onlineVBox" prefHeight="288.0" prefWidth="587.0" spacing="15.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="allPane" layoutY="39.0" prefHeight="361.0" prefWidth="600.0" visible="false">
+                           <children>
+                              <TextField layoutX="40.0" prefHeight="25.0" prefWidth="517.0" promptText="Search" />
+                              <Circle fill="WHITE" layoutX="530.0" layoutY="13.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Line endX="323.0" endY="-107.0" layoutX="207.0" layoutY="120.0" startX="332.0" startY="-98.0" />
+                              <Label layoutX="40.0" layoutY="50.0" text="All Friends -" />
+                              <Label layoutX="105.0" layoutY="50.0" text="//the counter of all friends" />
+                              <ScrollPane layoutY="87.0" prefHeight="286.0" prefWidth="605.0">
+                                 <content>
+                                    <VBox fx:id="allVBox" prefHeight="288.0" prefWidth="587.0" spacing="15.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="pendingPane" layoutY="49.0" prefHeight="351.0" prefWidth="600.0">
+                           <children>
+                              <TextField layoutX="40.0" prefHeight="25.0" prefWidth="517.0" promptText="Search" />
+                              <Circle fill="WHITE" layoutX="544.0" layoutY="14.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Line endX="333.0" endY="-102.0" layoutX="211.0" layoutY="116.0" startX="342.0" startY="-93.0" />
+                              <Label layoutX="40.0" layoutY="50.0" text="Requests -" />
+                              <Label layoutX="95.0" layoutY="50.0" text="//the counter of all requests" />
+                              <ScrollPane layoutY="76.0" prefHeight="284.0" prefWidth="605.0">
+                                 <content>
+                                    <VBox fx:id="pendingVBox" prefHeight="288.0" prefWidth="587.0" spacing="15.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="blockedPane" layoutY="49.0" prefHeight="361.0" prefWidth="610.0" visible="false">
+                           <children>
+                              <TextField layoutX="40.0" prefHeight="25.0" prefWidth="517.0" promptText="Search" />
+                              <Circle fill="WHITE" layoutX="544.0" layoutY="14.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Line endX="333.0" endY="-102.0" layoutX="211.0" layoutY="116.0" startX="342.0" startY="-93.0" />
+                              <Label layoutX="40.0" layoutY="50.0" text="All Friends -" />
+                              <Label layoutX="105.0" layoutY="50.0" text="//the counter of all blocked friends" />
+                              <ScrollPane layoutY="75.0" prefHeight="290.0" prefWidth="605.0">
+                                 <content>
+                                    <VBox fx:id="blockedVBox" prefHeight="288.0" prefWidth="587.0" spacing="15.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </Pane>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Pane>
+               </children>
+            </VBox>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>

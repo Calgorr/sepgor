@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="181.0">
+               <children>
+                  <VBox layoutX="6.0" prefHeight="501.0" prefWidth="158.0">
+                     <children>
+                        <Label maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="66.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="122.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="178.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="290.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="346.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="402.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </left>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="378.0">
+               <children>
+                  <VBox prefHeight="610.0" prefWidth="377.0">
+                     <children>
+                        <Label maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="66.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="122.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="178.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="290.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="346.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                        <Label layoutX="10.0" layoutY="402.0" maxHeight="-Infinity" prefHeight="56.0" prefWidth="170.0" text="server" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
